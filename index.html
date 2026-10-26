@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análise de Cor - Tintura & Fluxograma</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Elementos Decoraivos de Tinta no Fundo -->
+  <div class="splash splash-1" id="bgSplash1"></div>
+  <div class="splash splash-2" id="bgSplash2"></div>
+
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo-brush">🎨</div>
+      <h1>Psicologia das Cores</h1>
+      <p>Descubra a jornada da sua cor favorita através do nosso fluxograma dinâmico de tinta!</p>
+    </header>
+
+    <div class="app-grid">
+      <!-- Formulário de Perguntas -->
+      <section class="form-card paint-card">
+        <h2>Sua Jornada Colorida</h2>
+        
+        <form id="colorForm" onsubmit="event.preventDefault();">
+          
+          <!-- Pergunta 1 -->
+          <div class="form-group">
+            <label for="favColor">1. Qual a sua cor preferida?</label>
+            <div class="color-picker-wrapper">
+              <input type="color" id="colorPicker" value="#e91e63">
+              <input type="text" id="favColor" placeholder="Ex: Azul Celeste, Rosa Choque..." value="Rosa Choque">
+            </div>
+          </div>
+
+          <!-- Pergunta 2 -->
+          <div class="form-group">
+            <label for="whyColor">2. Por que ela é sua cor preferida?</label>
+            <textarea id="whyColor" rows="3" placeholder="Ex: Me traz paz e lembra o mar...">Me traz energia, criatividade e sensação de liberdade.</textarea>
+          </div>
+
+          <!-- Pergunta 3 -->
+          <div class="form-group">
+            <label>3. Ela é a sua cor preferida desde quando era criança?</label>
+            <div class="radio-group">
+              <label class="radio-btn">
+                <input type="radio" name="sinceChild" value="Sim, desde criança" checked>
+                <span>Sim! 👶</span>
+              </label>
+              <label class="radio-btn">
+                <input type="radio" name="sinceChild" value="Não, mudei com o tempo">
+                <span>Não, mudei 🔄</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Pergunta 4 -->
+          <div class="form-group">
+            <label>4. Você acredita que a sua cor preferida fala muito por você?</label>
+            <div class="radio-group">
+              <label class="radio-btn">
+                <input type="radio" name="expressesYou" value="Com certeza! Reflete quem sou" checked>
+                <span>Totalmente! 🗣️</span>
+              </label>
+              <label class="radio-btn">
+                <input type="radio" name="expressesYou" value="Apenas um gosto estético">
+                <span>Só um gosto 🤷</span>
+              </label>
+            </div>
+          </div>
+
+        </form>
+      </section>
+
+      <!-- Visualização do Fluxograma -->
+      <section class="flow-card paint-card">
+        <div class="flow-header">
+          <h2>Seu Fluxograma Vivo</h2>
+          <span class="badge" id="colorBadge">Sua Cor</span>
+        </div>
+        <div class="canvas-container">
+          <canvas id="flowCanvas"></canvas>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
